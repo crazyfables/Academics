@@ -2,8 +2,8 @@
 # 9/25/2018
 # pyscript.py
 # Title: Just a Simple Tutorial Part 1
-# Description: This script teaches basic commenting, functions (print), variable assignments, TO DOs, and
-# simple string formatting.
+# Description: An introductory python tutorial. This script teaches basic commenting, functions (print), variable
+# assignments, TO DOs, and simple string formatting.
 
 # I am a comment. Comments have # preceding them. They can be on their own line or at the end of a line of code.
 
@@ -29,8 +29,16 @@ print("\nHello World")
 characterName = input("What is your name: ")
 
 # In this example we introduce .format(variableName) after the literal string. {} is a placeholder for information.
-# If you end up including 2 or more variables you should use {0}, {1}, {2}, etc... instead.
+# If you end up including 2 or more instances of {} you should use {0}, {1}, {2}, etc... instead. Python will not like
+# it even if you use the same variable twice.
 print("Please to meet you {}!".format(characterName))
+
+# Won't work.
+# print("Please to meet you {}! Your mustache is amazing, {}!".format(characterName))
+
+# Will work
+print("Please to meet you {0}! Your mustache is amazing, {0}!".format(characterName))
+
 
 # Declaring string variables with information already.
 characterClass = "crazybarian" # Barbarian and an insane person combined into one!
@@ -73,4 +81,4 @@ print("\nThe End")
 
 # TODO: Never give up, never surrender!
 
-# TODO: Go and make your own story driven narrative with the information gained.
+# TODO: Go and make your own story driven narrative with the information gained. Make it 3 paragraphs with 4 variables.
