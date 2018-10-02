@@ -2,10 +2,8 @@ language: python
 python:
   - "3.6"
 
-# command to install dependencies
-#install:
-#  - pip install -r requirements.txt
+# skip install step
+install: true
 
-# command to run tests
 script:
-  - pytest
+  - ./python/guess.py
