@@ -1,6 +1,7 @@
 language: python
+sudo: true
 python:
-  - "3.4"
+  - "3.6"
 
 # skip install step
 install: true
