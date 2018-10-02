@@ -6,4 +6,5 @@ python:
 install: true
 
 script:
-  - /python/guess.py
+  - guess.py
+  - calculator.py
