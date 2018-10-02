@@ -6,4 +6,4 @@ python:
 install: true
 
 script:
-  - guess.py
+  - /python/guess.py
