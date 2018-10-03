@@ -8,6 +8,7 @@ os:
   - windows
 script:
   - python3 Python/calculator.py
-  1
-  55
-  47
+
+1
+55
+47
