@@ -1,5 +1,5 @@
-testing repository
+I was a test file once... used for testing if git commits and pushes worked... I was...
 
-test2
+My creator has moved on to better things and no longer needs me...
 
-added travis yml and tested config
+Someone should at least tell her she doesn't need to commit every time she creates just one script though.
