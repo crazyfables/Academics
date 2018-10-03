@@ -6,7 +6,7 @@
 # define functions
 # addition
 
-import sys
+import sys, random, decimal
 
 def add(a: int, b: int):
     return a + b
@@ -31,6 +31,12 @@ def divide(a: int, b: int):
 def mod(a: int, b: int):
     return a % b
 
+
+# start random seeds for CI testing removing user entry.
+random.seed()
+num1 = 0
+num2 = 0
+
 # instructions
 def instructions():
     print("Do you want to... "
@@ -42,7 +48,7 @@ def instructions():
 
 instructions()
 # testing the build
-choice = int(sys.argv[1])
+choice = random.randrange(1, 5)
 
 # choice = int(input("Enter choice: "))
 print("Enter choice: 1")
@@ -50,18 +56,28 @@ print("Enter choice: 1")
 # num1 = int(input("What is the first number: "))
 # num2 = int(input("What is the second number: "))
 
-num1 = int(sys.argv[2])
-num2 = int(sys.argv[3])
+while num1 <= num2:
+    num1 = random.randrange(1, 100)
+    num2 = random.randrange(1, 100)
 
 if choice == 1:
-    print("\nTotal: {}".format(add(num1, num2)))
+    print("\nAddition!")
+    print("\n{0} + {1} = {2}".format(num1, num2, add(num1, num2)))
 elif choice == 2:
-    print("\nTotal: {}".format(subtract(num1, num2)))
+    print("\nSubtraction!")
+    print("\n{0} - {1} = {2}".format(num1, num2, subtract(num1, num2)))
 elif choice == 3:
-    print("\nTotal: {}".format(multiply(num1, num2)))
+    print("\nMultiply!")
+    print("\n{0} * {1} = {2}".format(num1, num2, multiply(num1, num2)))
 elif choice == 4:
-    print("\nTotal: {}".format(divide(num1, num2)))
+    print("\nDivide!")
+    total = (divide(num1, num2))
+    total = '%.2f'%total
+    print("\n{0} / {1} = {2}".format(num1, num2, total))
 elif choice == 5:
-    print("\nRemainder: {}".format(mod(num1, num2)))
+    print("Modulus!")
+    print("\n{0} % {1} = {2}".format(num1, num2, mod(num1, num2)))
 else:
-    print("\nIncorrect entry")
+    print("You entered something dumb!")
+
+    print("Incorrect choice...")
