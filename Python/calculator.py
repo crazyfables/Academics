@@ -40,14 +40,11 @@ def instructions():
           "\n5....Modulus")
 
 instructions()
-#choice = int(input("Enter choice: "))
-choice = 1
+choice = int(input("Enter choice: "))
 print("Enter choice: 1")
 
-num1 = 42
-num2 = 7
-#num1 = int(input("What is the first number: "))
-#num2 = int(input("What is the second number: "))
+num1 = int(input("What is the first number: "))
+num2 = int(input("What is the second number: "))
 
 if choice == 1:
     print("\nTotal: {}".format(add(num1, num2)))
