@@ -2,4 +2,4 @@ testing repository
 
 test2
 
-added travis yml
+added travis yml and tested config
