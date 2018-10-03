@@ -53,7 +53,7 @@ print("Enter choice: 1")
 num1 = sys.argv[1]
 num2 = sys.argv[2]
 
-if choice == 1:
+if choice == "1":
     print("\nTotal: {}".format(add(num1, num2)))
 elif choice == 2:
     print("\nTotal: {}".format(subtract(num1, num2)))
