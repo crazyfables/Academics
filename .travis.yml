@@ -2,10 +2,10 @@ language: python
 
 python:
   - "3.4"
-sudo: true
+
 os:
   - linux
   - windows
 script:
-  - Python/guess.py
-  - Python/calculator.py
+  - python3 Python/guess.py
+  - python3 Python/calculator.py
