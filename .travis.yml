@@ -5,7 +5,7 @@ python:
 
 os:
   - linux
-  - windows
+
 script:
   - python3 Python/calculator.py
 
