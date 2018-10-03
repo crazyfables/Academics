@@ -8,7 +8,3 @@ os:
 
 script:
   - python3 Python/calculator.py
-
-1
-55
-47
