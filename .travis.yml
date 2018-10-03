@@ -1,13 +1,13 @@
 language: python
 
 python:
-  - "3.4"
+  - "3.6"
 
 os:
   - linux
 
 script:
   - python3 Python/calculator.py
-  - 1
-  - 55
-  - 7
+  1
+  55
+  7
