@@ -6,6 +6,7 @@
 # define functions
 # addition
 
+import sys
 
 def add(a: int, b: int):
     return a + b
@@ -41,11 +42,16 @@ def instructions():
 
 instructions()
 # testing the build
-choice = int(input("Enter choice: "))
+choice = sys.argv[0]
+
+# choice = int(input("Enter choice: "))
 print("Enter choice: 1")
 
-num1 = int(input("What is the first number: "))
-num2 = int(input("What is the second number: "))
+# num1 = int(input("What is the first number: "))
+# num2 = int(input("What is the second number: "))
+
+num1 = sys.argv[1]
+num2 = sys.argv[2]
 
 if choice == 1:
     print("\nTotal: {}".format(add(num1, num2)))

@@ -7,4 +7,4 @@ os:
   - linux
 
 script:
-  - exec python3 Python/calculator.py 1 55 8
+  - python3 Python/calculator.py 1 55 4
