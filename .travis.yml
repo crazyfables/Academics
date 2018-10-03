@@ -3,6 +3,9 @@ language: python
 python:
   - "3.6"
 
+os:
+  - osx
+  - windows
 script:
   - Python/guess.py
   - Python/calculator.py
