@@ -3,10 +3,6 @@ language: python
 python:
   - "3.6"
 
-# skip install step
-install:
-  - pip install python 3.6
-
 script:
   - Python/guess.py
   - Python/calculator.py
