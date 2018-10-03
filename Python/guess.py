@@ -20,8 +20,8 @@ print("Random number: {}".format(randnum))
 # Introduction
 print("Welcome to Guess My Number!. "
       "\nPlease enter a number between 1 and 100."
-      "\nWhen you guess closer the computer will tell you warmer."
-      "\nWhen you guess farther the computer will tell you closer."
+      "\nWhen you guess too high the computer will tell you high."
+      "\nWhen you guess too low the computer will tell you low."
       "\nGuess the number to win!")
 
 # Game Loop
@@ -34,7 +34,7 @@ while playerWin is False:
     elif playerGuess > randnum:
         print("\nGuess is too High!")
     elif playerGuess < randnum:
-        print("\nGuess is too low!")
+        print("\nGuess is too Low!")
 
 
 
