@@ -12,10 +12,11 @@ random.seed()
 randnum = random.randrange(1, 100)
 playerGuess = 0
 lastGuess = 0
+count = 0
 playerWin = False
 
 # Testing Random
-print("Random number: {}".format(randnum))
+#print("Random number: {}".format(randnum))
 
 # Introduction
 print("Welcome to Guess My Number!. "
@@ -26,10 +27,11 @@ print("Welcome to Guess My Number!. "
 
 # Game Loop
 while playerWin is False:
+    count += 1
     playerGuess = int(input("Please enter a guess: "))
 
     if playerGuess is randnum:
-        print("\nYou Win!")
+        print("\nYou Win with {} guesses!".format(count))
         playerWin = True
     elif playerGuess > randnum:
         print("\nGuess is too High!")

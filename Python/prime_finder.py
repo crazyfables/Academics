@@ -11,7 +11,7 @@ class Prime:
     min = 2
     max = 0
 
-    # returns true if num has no divisions except itself and 2.
+    # returns true if num has no divisions except itself and 1.
     def is_prime(self, num):
         for x in range(2, num-1):
             if num % x is 0:
@@ -26,7 +26,6 @@ class Prime:
 
     # prints if is_prime() returns true.
     def print_prime(self):
-
         for x in range(self.min, self.max+1):
             if self.is_prime(x):
                 print(x)

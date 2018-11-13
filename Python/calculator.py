@@ -2,11 +2,13 @@
 # Calculator
 # 10/2/2018
 # Description: A simple calculator. Using Functions, If/Else, int conversion
+# script has been updated to require zero input for travis ci testing.
 
 # define functions
 # addition
 
-import sys, random, decimal
+import random
+
 
 def add(a: int, b: int):
     return a + b
@@ -51,7 +53,7 @@ instructions()
 choice = random.randrange(1, 5)
 
 # choice = int(input("Enter choice: "))
-print("Enter choice: 1")
+print("Enter choice: {}".format(choice))
 
 # num1 = int(input("What is the first number: "))
 # num2 = int(input("What is the second number: "))
