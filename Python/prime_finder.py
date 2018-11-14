@@ -1,6 +1,6 @@
 # By Jessica Angela Campisi
 # Prime Finder
-# 10/04/2018
+# 11/04/2018
 # Description: Print out every prime number between 2 and x. Made a class for this. Overkill.
 
 
