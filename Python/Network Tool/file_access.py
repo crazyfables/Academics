@@ -11,20 +11,21 @@ class UserData:
     oldPC = ""
     userName = ""
 
-    def __init__(self):
-        # check to see if they want to load the old information or use new user information.
 
-        self.display_user_info()
-        new_user = input("\n\nDo you wish to enter new user information Yes/No: ")
-
-        if new_user.capitalize() == "Yes":
-            self.get_info_from_user()
-
-        elif new_user.capitalize() == "No":
-            print("\nUsing original information.")
-        else:
-            print("\nDid not enter a Yes or a No. Try Again.")
-            self.initialize()
+    # def __init__(self):
+    #     # check to see if they want to load the old information or use new user information.
+    #
+    #     self.display_user_info()
+    #     new_user = input("\nDo you wish to enter new user information Yes/No [No]: ")
+    #
+    #     if new_user.capitalize() == "Yes":
+    #         self.get_info_from_user()
+    #
+    #     elif new_user.capitalize() == "No" or new_user == "":
+    #         print("\nUsing original information.")
+    #     else:
+    #         print("\nDid not enter a Yes or a No. Try Again.")
+    #         self.initialize()
 
     # Write the user data to a file
     def save_user_file(self):
@@ -51,7 +52,7 @@ class UserData:
             f.close()
 
         except FileNotFoundError:
-            print("File does not exist!")
+            print("A file does not exist yet!")
 
             # If the file does not exist, get it from the user
             self.get_info_from_user()
@@ -99,12 +100,12 @@ class UserData:
         # check to see if they want to load the old information or use new user information.
 
         self.display_user_info()
-        new_user = input("\n\nDo you wish to enter new user information Yes/No: ")
+        new_user = input("\n\nDo you wish to enter new user information Yes/No [No]: ")
 
         if new_user.capitalize() == "Yes":
             self.get_info_from_user()
 
-        elif new_user.capitalize() == "No":
+        elif new_user.capitalize() == "No" or new_user == "":
             print("\nUsing original information.")
         else:
             print("\nDid not enter a Yes or a No. Try Again.")
