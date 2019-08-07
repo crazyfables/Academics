@@ -20,60 +20,120 @@ import random, time
 random.seed()
 
 # function rolls the dice getting a number between 1 and 6 and return that value to the main loop
-def diceRoll(player):
-    random.seed()
-    # print("Rolling the dice...")
-    diceroll = random.randrange(1, 7)
-    if player == 0:
-        player = "Player"
-    else:
-        player = "Computer Player"
-    print("{0} rolled a {1}!".format(player, diceroll))
-    time.sleep(1)
-    return diceroll
 
 
-playerTurn = random.randrange(0, 2)
-playerScore = 0
-computerScore = 0
-roll = 0
-winner = ""
+class Pigdice:
+    name = ""
+    turn = 0
+    playerScore = 0
+    computerScore = 0
+    turnScore = 0
 
-# if 0 the player will go first, else the computer will
-if playerTurn:
-    print("Player will go first!")
-else:
-    print("Computer Player will go first!")
+    # Player Turn function
+    # roll
+    # print results
+    # if roll is not one then add to turn score
+    # ask player if they want to roll again
+    def playerTurn(self):
+        roll = self.diceRoll(1, 7) # creates a random number 1-6
 
-while playerScore < 100 and computerScore < 100:
+        if roll is not 1:
+            self.turnScore += roll
+            print("\nThe Player rolled a {0}! Their turn score is now {1}!".format(roll, self.turnScore))
 
-    # start the player turn
-    if playerTurn == 0:
-        print("\nThe Player will now go.")
+            # ask if the player wants to roll again if the score is less than 100
+            if self.playerScore + self.turnScore < 100:
+                again = input("Roll again? Y/N: ")
 
-        while roll is not 1 and playerScore < 100:
-            # roll dice
-            roll = diceRoll(playerTurn)
-            playerScore += roll
+                if again.lower() == 'y':
+                    self.playerTurn()
+                else:
+                    print("Player has ended their turn!")
+                    self.playerScore += self.turnScore
+                    print("The Player's score is now: {}".format(self.playerScore))
+            else:
+                self.playerScore += self.turnScore
+                print("The Player's score is now: {}".format(self.playerScore))
 
-        # display player score, pause before next player turn, and reset token values
-        print("Final Score for the turn is: {}".format(playerScore))
-        time.sleep(2)
-        playerTurn = 1
-        roll = 0
+        # if roll is 1 then clear turnScore and tell the player the results
+        else:
+            self.turnScore = 0
+            print("The Player has rolled a 1 and have lost all their points for the turn!")
+            print("Their score is sitting at {}".format(self.playerScore))
+            time.sleep(3)
 
-    else:
-        print("\nThe Computer Player will now go.")
 
-        while roll is not 1 and computerScore < 100:
-            # roll dice
-            roll = diceRoll(playerTurn)
-            computerScore += roll
+    # Roll function
+    # pass parameters low, and high
+    # return random number between low and high
+    def diceRoll(self, low, high):
+        return random.randrange(low, high)
 
-        # display computer score, pause before next player turn, and reset token values
-        print("Final Score for the turn is: {}".format(computerScore))
-        time.sleep(2)
-        playerTurn = 0
-        roll = 0
+    # Computer Turn Function
+    # roll
+    # print results
+    # if roll is not one then add to turn score
+    # if turn score is less than 15 then roll again
+    def computerTurn(self):
+        roll = self.diceRoll(1, 7)
+        self.turnScore += roll
+        if roll is not 1:
+            if self.computerScore + self.turnScore < 100:
+                if self.turnScore < 15:
+                    print("\nThe Computer Player has rolled a {0}! Their turn score is now {1}!".format(roll, self.turnScore))
+                    print("The Computer Player decides to roll again!")
+                    time.sleep(2)
+                    self.computerTurn()
+                else:
+                    print("The Computer Player has rolled a {0}! Their turn score is now {1}!".format(roll, self.turnScore))
+                    self.computerScore += self.turnScore
+                    print("\nThe Computer Player has decided not to roll again. Their new total is {}".format(
+                        self.computerScore))
+            else:
+                print("\nThe Computer Player has rolled a {0}! Their turn score is now {1}!".format(roll, self.turnScore))
+                print("The Computer Player's score is now: {}".format(self.playerScore))
 
-print("And the final winner is: {}!".format(winner))
+        else:
+            self.turnScore = 0
+            print("The Computer Player has rolled a 1 and have lost all their points for the turn!")
+            print("Their score is sitting at {}".format(self.computerScore))
+            time.sleep(3)
+
+
+    # Main Loop
+    # Call Roll function with a 0 or 1
+    # If turn == 0 then its the player turn
+    # if turn == 1 then is the programmer
+    # Display turn results
+    # if 0 then run player turn function
+    # if roll is 1 then turnScore = 0
+    # display end of turn score
+    # if 1 then run computer turn function
+    # if roll is 1 then turnScore = 0
+    # display end of turn score
+    def mainLoop(self):
+        turn = self.diceRoll(0, 2)
+
+        while True:
+            if turn:
+                print("It's the Player's Turn!")
+                self.playerTurn()
+                if self.playerScore >= 100:
+                    print("\nThe Player Wins!")
+                    break
+                turn = 0
+                self.turnScore = 0
+                print("----------------------------------")
+            else:
+                print("It's the Computer Player's Turn!")
+                self.computerTurn()
+                if self.computerScore >= 100:
+                    print("\nThe computer wins!")
+                    break
+                turn = 1
+                self.turnScore = 0
+                print("----------------------------------")
+
+
+game = Pigdice()
+game.mainLoop()
