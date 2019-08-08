@@ -1,4 +1,8 @@
 """
+Pig Dice
+By Jessica Angela Campisi
+Date: 8/7/2019
+
 Decide who will start by having each player roll a dice – the one with the highest score starts the game
 A player’s turn starts by rolling only one dice. The player continues to roll the dice again, as long as he does not
 roll a 1 or decides to add his points to his overall score. Each time the player rolls the dice, the following options
@@ -80,18 +84,21 @@ class Pigdice:
         if roll is not 1:
             if self.computerScore + self.turnScore < 100:
                 if self.turnScore < 15:
-                    print("\nThe Computer Player has rolled a {0}! Their turn score is now {1}!".format(roll, self.turnScore))
+                    print("\nThe Computer Player has rolled a {0}! "
+                          "Their turn score is now {1}!".format(roll, self.turnScore))
                     print("The Computer Player decides to roll again!")
                     time.sleep(2)
                     self.computerTurn()
                 else:
-                    print("The Computer Player has rolled a {0}! Their turn score is now {1}!".format(roll, self.turnScore))
+                    print("The Computer Player has rolled a {0}! "
+                          "Their turn score is now {1}!".format(roll, self.turnScore))
                     self.computerScore += self.turnScore
                     print("\nThe Computer Player has decided not to roll again. Their new total is {}".format(
                         self.computerScore))
             else:
-                print("\nThe Computer Player has rolled a {0}! Their turn score is now {1}!".format(roll, self.turnScore))
-                print("The Computer Player's score is now: {}".format(self.playerScore))
+                print("\nThe Computer Player has rolled a {0}! "
+                      "Their turn score is now {1}!".format(roll, self.turnScore))
+                print("The Computer Player's score is now: {}".format(self.computerScore))
 
         else:
             self.turnScore = 0
