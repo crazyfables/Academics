@@ -68,4 +68,10 @@ def noMath():
     num = num.replace(',', '')
     num = num.replace('.', '')
     print("Result: {}".format(num))
+
+
+def stringfun():
+    a = {'a', 'b', 'c', 'd'}
+    a.pop()
+
 menu()
